@@ -310,7 +310,7 @@ where
 
             // CONNECT always sends authority-form, so check it first...
             if req.method() == Method::CONNECT {
-                authority_form(req.uri_mut());
+                origin_form(req.uri_mut());
             } else if pooled.conn_info.is_proxied {
                 absolute_form(req.uri_mut());
             } else {
